@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Data Science with sikit-learn: Planetary examples</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-transition="fade">
+                    <h2>Data Science with scikit-learn: Planetary examples</h2>
+                    <h4>VO and Planetary Mapping Workshop 1-3 July 2019</h4>
+                </section>
+				<section data-transition="fade" id="datascience">
+                    <h3>Data Science</h3>
+						<p>Data science is a multi-disciplinary field that uses scientific methods,
+						processes, algorithms and systems to extract knowledge and insights from
+						structured and unstructured data.</p>
+						<p><small><i><a href="https://en.wikipedia.org/wiki/Data_science">https://en.wikipedia.org/wiki/Data_science</a></i></small></p>
+						<p>More focus on data wrt methods</p>
+                </section>
+				<section data-transition="fade" id="datascienceapp">
+                    <h3>Data Science approaches</h3>
+						<ul>
+							<li>Statistics</li>
+							<li>'Classical' Machine Learning</li>
+							<li class="fragment fade-out">Deep Learning</li>
+						</ul>
+						<p class="fragment fade-in">Does still have sense?</p>
+						<span class="fragment fade-in">
+						<p>Yes (particularly for vector data)</p>
+						<ul>
+						<li>Data discovery tool</li>
+						<li>Better interpretability</li>
+						<li>Useful for pre-processing of DL applications</li>
+						<li>No mandatory GPU</li>
+						</ul>
+						</span>
+                </section>
+				<section data-transition="fade" id="skl">
+                    <h3>Scikit-learn</h3>
+					<p><a href="https://scikit-learn.org">https://scikit-learn.org/</a></p>
+					<ul>
+						<li>Open source, commercially usable - BSD license</li>
+						<li>Python</li>
+						<li>Built on NumPy, SciPy, and matplotlib</li>
+					</ul>
+				</section>	
+				<section data-transition="fade" id="sklres">
+                    <h3>Resources</h3>
+                        <ul>
+                            <li>
+                                <a href="https://scikit-learn.org/stable/documentation.html">Scikit-learn documentation</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/amueller/introduction_to_ml_with_python">Introduction to Machine Learning with Python</a> by Andreas Mueller
+                            </li>
+                            <li>
+                                <a href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a> by Jake Vanderplas
+                            </li>
+							<li>...</li>
+				</section>
+				<section data-transition="fade" id="learnprobs">
+                    <h3>Learning Problems Categories</h3>
+						<ul>
+							<li>Supervised Learning
+								<ul>
+									<li>Classification (discrete output values)</li>
+									<li>Regression (continuous output values)</li>
+								</ul>
+							</li>
+							<li>Unsupervised Learning
+								<ul>
+									<li>Clustering (discover groups)</li>
+									<li>Manifold Learning (discover the 'true' dimensionality of a distribution)</li>
+									<li>...</li>
+								</ul>
+							</li>
+						</ul>	
+                </section>
+				<section data-transition="fade" id="datastruct">
+					<h3>Data structure</h3>
+					<p>Data as tables, catalogs ie vector information</p>
+					<p>Rows are catalog entries, granules, features (in GIS nomenclature), samples</p>
+					<p>Columns are observables, attributes (in GIS nomenclature), input parameters</p>
+					<p>Predictions are labels, real values, targets</p>
+					<code>X = input_data[n_samples,n_attributes]<br/>
+					Y = target_data[n_samples,n_targets]
+					</code>
+                </section>
+				<section data-transition="fade" id="intcomp">
+                </section>
+				<section  data-transition="fade" id="reqtxt">
+                </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
