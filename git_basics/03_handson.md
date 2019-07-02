@@ -1,5 +1,9 @@
 # Hands on Git
 
+- - -
+Install Git: https://git-scm.com/
+- - -
+
 At this point we should put in practice those basic commands in what is
 likely to be our everyday git workflow.
 
