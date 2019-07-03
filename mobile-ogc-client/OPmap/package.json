@@ -1,0 +1,30 @@
+{
+  "name": "org.openplanetary.opmap",
+  "displayName": "OPmap",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application based on some leaflet code...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Sebastian Walter, Carlos Brandt",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cordova-android": "^8.0.0"
+  },
+  "devDependencies": {
+    "cordova": "^9.0.0",
+    "cordova-plugin-whitelist": "^1.3.4"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}

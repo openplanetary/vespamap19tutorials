@@ -2,6 +2,8 @@
 
 ## Tutorial/Hackathon for the VESPA/PLANMAP Meeting Paris, 1-3 July 2019
 
+**please raise issues here in this repository!**
+
 ### Possible Tasks for participation
 
 - Conceptual, e.g. which data to display
@@ -25,5 +27,7 @@
   - just bookmark or app (e.g. Cordova)?
   - Which libary/framework? Cesium, OpenLayers, [ol-cesium](https://openlayers.org/ol-cesium/), leaflet
   - Controls: ol-layerswitcher (pure/DIV)
+  
+- see leaflet code by @chbrandt at [src/index.html](src/index.html)
 
 - [Cordova](./cordova-howto.md)
