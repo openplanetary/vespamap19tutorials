@@ -1,0 +1,69 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MapApp</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+</head>
+<body>
+  <div id="mapcontainer" style="height:100%; width:100%"></div>
+
+  <script type="text/javascript">
+    var map = L.map('mapcontainer');
+    var basemap_url = 'https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-1/0,1,2,3,4/{z}/{x}/{y}.png';
+    var basemap_options = {
+      crs: L.CRS.EPSG4326,
+      maxNativeZoom: 9,
+      attribution: "<a href='https://github.com/openplanetary/opm/wiki/OPM-Basemaps' target='_blank'>OpenPlanetaryMap</a>"
+    };
+    var basemap = L.tileLayer(basemap_url, basemap_options).addTo(map);
+    map.fitBounds([[-180,-90],[180,90]]);
+
+    var control = L.control.layers(baseLayers={"OPM":basemap}).addTo(map);
+
+    var tms_hirise = L.tileLayer('http://astro.arcgis.com/arcgis/rest/services/OnMars/HiRISELS/base/MapServer/tile/{z}/{y}/{x}.png', {
+      attribution: 'USGS Astrogeology'
+    }).addTo(map);
+
+    control.addOverlay(tms_hirise, "Hirise");
+    
+    var wms_arsinoes = L.tileLayer.wms('https://geoserver.planmap.eu/mars/wms?', {
+      layers:'mars:PM-MAR-MS-Crommelin_01',
+      format:'image/png',
+      version:'1.1.0',
+      transparent: true,
+    }).addTo(map);
+
+    control.addOverlay(wms_arsinoes, "Crommelin");
+
+    function loadWFS(layers) {
+      var urlString = "https://geoserver.planmap.eu/mars/wms?";
+      var param = {
+          service: 'WFS',
+          version: '1.1.0',
+          request: 'GetFeature',
+          typeName: layers.join(','),
+          outputFormat: 'application/json',
+          maxFeatures:32000,
+          srsName: "EPSG:4326"
+      };
+      var u = urlString + L.Util.getParamString(param, urlString);
+
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              var geojson = JSON.parse(this.responseText);
+              console.log(geojson);
+              var gjs = L.geoJSON(geojson).addTo(map);
+              control.addOverlay(gjs, "Arsinoes");
+          }
+      };
+      xmlhttp.open("GET", u, true);
+      xmlhttp.send();
+    }
+    loadWFS([
+            'mars:PM-MAR-MS-Arsinoes_01_Units',
+            'mars:PM-MAR-MS-Arsinoes_01_Structural_features'])
+  </script>
+</body>
