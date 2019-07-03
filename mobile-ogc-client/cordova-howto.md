@@ -19,6 +19,7 @@
 - [Gradle (build system)](https://gradle.org/install/)
   ```
   cd $BASEDIR; unzip ~/Downloads/gradle-5.5-bin.zip
+  export PATH=$BASEDIR/gradle-5.5/bin:$PATH
   ```
 
 - [Direct dependencies for Cordova](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html)
@@ -50,22 +51,31 @@
 - [Install cordova and create HelloWorld](https://cordova.apache.org/docs/en/latest/guide/cli/index.html#create-the-app)
   ```
   npm install -g cordova
-  npm search cordova:template
-  cordova create hello com.example.hello HelloWorld
-  ls hello
+  cordova create OPmap org.openplanetary.opmap OPmap
+  ls OPmap
   ```
 - [Add platform](https://cordova.apache.org/docs/en/latest/guide/cli/index.html#add-platforms)
   ```
-  cd hello
+  cd OPmap
   cordova platform add android
   ```
 - Adapt HelloWorld template
   ```
   vi www/index.html
-  (paste code from Carlos)
+  ```
+  (paste leaflet code from @chbrandt, [./app/index.html](./app/index.html) )
+- Compile APK package
+  ```
+  cordova build
   ```
 - Run Cordova in the emulator
   ```
+  cordova run android
+  ```
+- Run Cordova in your device
+  ```
+  CTRL-C
+  sudo $BASEDIR/platform-tools/adb devices
   cordova run android
   ```
   
