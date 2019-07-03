@@ -99,8 +99,6 @@ We may start our note/document with a "skeleton":
 
 # Status of projects
 
-# Lessons learned
-
 # Food
 ```
 
@@ -123,10 +121,7 @@ Now we add some information:
 
 # Status of projects
 * VESPA: EPN-what?
-* Planmap: Angelo wants a 10-D viewer... Cesium-137 with some LSD may do it
-
-# Lessons learned
-* ...LSD is mandatory
+* Planmap: Maps, maps, maps
 
 # Food
 * Pain au chocolat forever
