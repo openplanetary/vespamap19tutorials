@@ -31,7 +31,9 @@ content can exist completely offline in a user's personal computer alone.
 
 An expression very common to the Git environment is _branches_.
 Here is an abstraction of the _branches_ scenario:
-![Git branches](https://git-scm.com/images/about/branches@2x.png)
+
+<img src='https://git-scm.com/images/about/branches@2x.png' alt='Git branches' width=500px>
+
 Branches are versions of your repository.
 Every repository has a _master_<sup>^</sup> branch, from which new branches
 can be created. Branches allow developers to edit part of the code base
